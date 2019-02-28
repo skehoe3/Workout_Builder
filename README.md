@@ -6,14 +6,14 @@ You input 1 of several muscle groups (core, cardio, lower body, or upper body) a
 # Prerequisites
 To run this code, you'll need to have the following installed: 
 
--python3
--numpy
--time
--random
--pyttsx3
+- python3
+- numpy
+- time
+- random
+- pyttsx3
 
 This is a fairly basic formulation so far, but additional features are envisioned.
 
 # Additional Features
--web UI
--video/gif showing how to do the excercise
+- web UI
+- video/gif showing how to do the excercise
