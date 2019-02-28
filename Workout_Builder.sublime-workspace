@@ -4,8 +4,60 @@
 		"selected_items":
 		[
 			[
+				"y",
+				"y_range"
+			],
+			[
 				"ke",
-				"keys\t( o: Object ): string[] Object"
+				"key_count"
+			],
+			[
+				"sele",
+				"selectAll"
+			],
+			[
+				"dev",
+				"dev_keys_set"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"consol",
+				"console.log"
+			],
+			[
+				"device",
+				"device_key"
+			],
+			[
+				"test",
+				"testData"
+			],
+			[
+				"end",
+				"end_ex"
+			],
+			[
+				"start",
+				"start_ex"
+			],
+			[
+				"formatted",
+				"formatted_dates"
+			],
+			[
+				"JS",
+				"JSON_stringify\t( value: any, replacer?: any, space?: any ): string JSON"
+			],
+			[
+				"form",
+				"form_date"
+			],
+			[
+				"call",
+				"call_heatmap"
 			],
 			[
 				"200",
@@ -136,6 +188,20 @@
 	},
 	"file_history":
 	[
+		"/Users/shannon/git/RESWARM/frontend/src/components/feb 22 draft.js",
+		"/Users/shannon/git/RESWARM/frontend/src/components/feb 15 work.js",
+		"/Users/shannon/git/RESWARM/frontend/src/components/heat_map_Shannon_and_Phillip_work.js",
+		"/Users/shannon/git/RESWARM/backend/swarm_db/function/device/f_read_device_history.sql",
+		"/Users/shannon/git/RESWARM/frontend/src/components/group-view.js",
+		"/Users/shannon/git/RESWARM/frontend/index.html",
+		"/Users/shannon/git/RESWARM/frontend/src/components/landing-view.js",
+		"/Users/shannon/git/RESWARM/frontend/src/components/OLD-heat-map.js",
+		"/Users/shannon/git/RESWARM/frontend/src/components/reswarm-icons.js",
+		"/Users/shannon/git/RESWARM/frontend/package.json",
+		"/Users/shannon/git/RESWARM/backend/services/api/devices/devices.js",
+		"/Users/shannon/git/RESWARM/backend/services/backend.js",
+		"/Users/shannon/git/RESWARM/backend/swarm_db/install/create_functions.sql",
+		"/Users/shannon/git/RESWARM/pi-services/services/svc_app_logs/webcomponent/autobahn.min.js",
 		"/Users/shannon/git/RESWARM/frontend/src/components/heat-map.js",
 		"/Users/shannon/git/RESWARM/bower_components/d3/README.md",
 		"/Users/shannon/git/RESWARM/frontend/src/components/management-view.js",
@@ -145,7 +211,6 @@
 		"/Users/shannon/git/RESWARM/frontend/src/components/data.csv",
 		"/Users/shannon/git/RESWARM/frontend/src/components/heat_map.html",
 		"/Users/shannon/git/RESWARM/frontend/src/components/live-box.js",
-		"/Users/shannon/git/RESWARM/frontend/src/components/reswarm-icons.js",
 		"/Users/shannon/git/RESWARM/README.md",
 		"/Users/shannon/git/RESWARM/front_end3/src/components/landing-view.js",
 		"/Users/shannon/git/RESWARM/front_end3/src/components/reswarm-icons.js",
@@ -176,7 +241,7 @@
 	],
 	"find":
 	{
-		"height": 45.0
+		"height": 44.0
 	},
 	"find_in_files":
 	{
@@ -214,7 +279,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 33.0
+		"height": 32.0
 	},
 	"input":
 	{
@@ -259,7 +324,7 @@
 	"project": "Workout_Builder.sublime-project",
 	"replace":
 	{
-		"height": 62.0
+		"height": 60.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -268,6 +333,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"autobahm",
+				"pi-services/services/svc_app_logs/webcomponent/autobahn.min.js"
+			],
 			[
 				"ba",
 				"backend/services/backend.js"

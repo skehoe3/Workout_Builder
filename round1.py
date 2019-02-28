@@ -4,7 +4,7 @@ from random import randint
 import time
 
 
-#randomly selects a the number of excercises specified from the muscle group desired.
+#randomly selects the number of excercises specified from the muscle group desired.
 def build_component(num_excercises, musc_group = ['upper_body', 'lower_body', 'core', 'cardio']):
 	if 	musc_group == 'upper_body':
 		ex_type = ['Normal Pushups','tricep dip', 'plank up', 'inchworm', 'plank taps', 'lateral plank walks', 'plank jacks']
@@ -24,7 +24,7 @@ def build_component(num_excercises, musc_group = ['upper_body', 'lower_body', 'c
 #assigns a time, in seconds, that each excercise should be done for.  
 def assign_time(list_of_exs):
 	times = []
-	choose_one = range(0,90,15)
+	choose_one = range(0,90,15) #times are intervals of 15 seconds between 0 ad 90
 	for i in range(0,len(list_of_exs)):
 		x = randint(1, len(choose_one)) -1
 		times.append(choose_one[x])
@@ -36,7 +36,7 @@ def merge_times_and_components(list_of_exs, num_excercises):
 
 #uses python's pyttsx3 library to play the workout for you.
 def play_workout(zipped_t_and_c):
-	list_it = list(zipped_t_and_c)
+	list_it = list(zipped_t_and_c) #convert from a zip object to list
 	for i in range(len(list_it)):
 		w = 'Do ' + str(list_it[i][0]) + ' for ' + str(list_it[i][1]) + ' seconds'
 		countdown = [str(i) for i in range(0, list_it[i][1], -1)]
@@ -61,4 +61,4 @@ def build_workout(number, g = ['upper_body', 'lower_body', 'core', 'cardio']):
 
 #sample calls
 build_workout(1, 'upper_body')
-build_workout(1, 'lower_body')
+build_workout(3, 'lower_body')
