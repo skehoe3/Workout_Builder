@@ -4,8 +4,16 @@
 		"selected_items":
 		[
 			[
-				"ex",
-				"ex_type〔argument〕"
+				"ke",
+				"keys\t( o: Object ): string[] Object"
+			],
+			[
+				"200",
+				"2000"
+			],
+			[
+				"20",
+				"2000"
 			],
 			[
 				"list",
@@ -18,6 +26,10 @@
 			[
 				"me",
 				"merge_times_and_components〔function〕"
+			],
+			[
+				"ex",
+				"ex_type〔variable〕"
 			],
 			[
 				"num",
@@ -59,15 +71,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "workout_designer3.py",
-			"settings":
-			{
-				"buffer_size": 2077,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -133,14 +136,24 @@
 	},
 	"file_history":
 	[
-		"/Users/shannon/git/Workout_Builder/workout_designer2.py",
-		"/Users/shannon/Downloads/baseline-show_chart-24px.svg",
+		"/Users/shannon/git/RESWARM/frontend/src/components/heat-map.js",
+		"/Users/shannon/git/RESWARM/bower_components/d3/README.md",
+		"/Users/shannon/git/RESWARM/frontend/src/components/management-view.js",
+		"/Users/shannon/git/RESWARM/frontend/src/components/d3.js",
+		"/Users/shannon/git/RESWARM/frontend/src/components/heat-map.html",
+		"/Users/shannon/git/RESWARM/backend/services/api/devices/test.js",
+		"/Users/shannon/git/RESWARM/frontend/src/components/data.csv",
+		"/Users/shannon/git/RESWARM/frontend/src/components/heat_map.html",
+		"/Users/shannon/git/RESWARM/frontend/src/components/live-box.js",
+		"/Users/shannon/git/RESWARM/frontend/src/components/reswarm-icons.js",
+		"/Users/shannon/git/RESWARM/README.md",
+		"/Users/shannon/git/RESWARM/front_end3/src/components/landing-view.js",
+		"/Users/shannon/git/RESWARM/front_end3/src/components/reswarm-icons.js",
 		"/Users/shannon/git/RESWARM/front_end3/images/manifest/deviceManagement.svg",
 		"/Users/shannon/git/RESWARM/front_end3/src/components/nav-box2.js",
 		"/Users/shannon/git/RESWARM/front_end3/src/components/landing-view-final.js",
 		"/Users/shannon/git/RESWARM/front_end3/src/components/landing-view-elementwise-build.js",
 		"/Users/shannon/git/RESWARM/front_end3/src/shared-styles/main.js",
-		"/Users/shannon/git/RESWARM/front_end3/src/components/reswarm-icons.js",
 		"/Users/shannon/git/RESWARM/front_end3/src/components/reswarm-dialog.js",
 		"/Users/shannon/git/RESWARM/front_end3/src/components/examples-from-phillip.js",
 		"/Users/shannon/git/RESWARM/front_end3/images/manifest/iotAppStore.svg",
@@ -163,7 +176,7 @@
 	],
 	"find":
 	{
-		"height": 33.0
+		"height": 45.0
 	},
 	"find_in_files":
 	{
@@ -194,41 +207,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "workout_designer3.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2077,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								330,
-								330
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"git_gutter_is_enabled": true,
-							"git_savvy.repo_path": "/Users/shannon/git/Workout_Builder",
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -288,6 +268,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"ba",
+				"backend/services/backend.js"
+			],
+			[
+				"icons",
+				"frontend/src/components/reswarm-icons.js"
+			],
 			[
 				"",
 				"Makefile"
