@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shannon</title>
+
+    <link rel="stylesheet"  href="/static/style.css">
+  </head>
+
+  <body>
+    
+<h1>Automate your workout selection</h1>
+
+<!--for hooking up the python script: https://stackoverflow.com/questions/11556958/sending-data-from-html-form-to-a-python-script-in-flask/30699653 -->
+
+<!-- this is most useful: https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Your_first_HTML_form -->
+
+<!--this is the MOST MOST useful: https://stackoverflow.com/questions/12277933/send-data-from-a-textbox-into-flask -->
+
+<div class="workoutInputs">
+<form class="inputForm" methond="post">
+	Muscle Group: <input type="text" name="muscleGroup"> <br>
+	Number of Excercises: <input type="numeric" name="numEx"> <br>
+	<button type="button" class="press">Submit</button>
+</form>
+</div>
+  </body>
+</html>
