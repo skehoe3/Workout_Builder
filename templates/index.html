@@ -4,6 +4,7 @@
     <title>Shannon</title>
 
     <link rel="stylesheet"  href="/static/style.css">
+    <script type="text/javascript" src="/static/workForm.js"></script>
   </head>
 
   <body>
@@ -16,8 +17,11 @@
 
 <!--this is the MOST MOST useful: https://stackoverflow.com/questions/12277933/send-data-from-a-textbox-into-flask -->
 
+<!--lifted the CSS from Nike's site -->
+
+
 <div class="workoutInputs">
-<form class="inputForm" methond="post">
+<form id="inputForm" method="POST" >
 	Muscle Group: <input type="text" name="muscleGroup"> <br>
 	Number of Excercises: <input type="numeric" name="numEx"> <br>
 	<button type="button" class="press">Submit</button>

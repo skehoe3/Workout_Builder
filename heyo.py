@@ -5,6 +5,7 @@
 #significantly better tutorial: https://code-maven.com/using-templates-in-flask
 
 from flask import Flask, render_template, request
+import round1
 
 app = Flask(__name__)
 
@@ -15,7 +16,7 @@ def hello_world():
 @app.route('/', methods=['POST'])
 def my_form_post():
     text = request.form['text']
-    processed_text = text.upper()
+    processed_text = text.lower()
     return processed_text
 
 if __name__ == '__main__':

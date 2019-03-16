@@ -59,6 +59,9 @@ def build_workout(number, g = ['upper_body', 'lower_body', 'core', 'cardio']):
 	work_this = merge_times_and_components(workout, times)
 	play_workout(work_this)
 
+def _test():
+	print('woohoo import worked')
+
 #sample calls
-build_workout(1, 'upper_body')
-build_workout(3, 'lower_body')
+#build_workout(1, 'upper_body')
+#build_workout(3, 'lower_body')
