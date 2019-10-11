@@ -17,3 +17,7 @@ This is a fairly basic formulation so far, but additional features are envisione
 # Additional Features
 - web UI
 - video/gif showing how to do the excercise
+- pause functionality
+- save to favorites
+    - the single excercise
+    - the full workout that was built
