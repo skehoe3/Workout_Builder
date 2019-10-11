@@ -14,7 +14,7 @@ app = Flask(__name__)
 def hello_world():
     return render_template('index.html')
 
-@app.route('/workout', methods=['POST'])
+@app.route('/', methods=['POST'])
 def my_form_post():
     #text = request.form['text']
     #processed_text = text.lower()

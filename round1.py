@@ -8,8 +8,6 @@ from resources.excercies import groups
 class Workout():
 	# TODO:
 	#randomly selects the number of excercises specified from the muscle group desired.
-	#reorg the muscle groups as dictionaries. put it in a resources file.
-
 	#reformat user input to match the options in the app
 	def _sanitize_inputs(self, musc_group):
 		return musc_group.strip().replace(' ', '_')
@@ -27,7 +25,7 @@ class Workout():
 	#assigns a time, in seconds, that each excercise should be done for.  
 	def _assign_time(self, list_of_exs):
 		times = []
-		choose_one = range(0,90,15) #times are intervals of 15 seconds between 0 ad 90
+		choose_one = range(0,90,15) #times are intervals of 15 seconds between 0 and 90
 		for i in range(0,len(list_of_exs)):
 			x = randint(1, len(choose_one)) -1
 			times.append(choose_one[x])

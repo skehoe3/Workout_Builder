@@ -2,5 +2,5 @@
 const resForm = document.getElementById("inputForm");
 
 resForm.addEventListener('click', function(){
-    document.getElementById("contactMeForm").reset();
+    document.getElementById("inputForm").reset();
 });
