@@ -21,3 +21,9 @@ This is a fairly basic formulation so far, but additional features are envisione
 - save to favorites
     - the single excercise
     - the full workout that was built
+
+# Running the App
+Execute the following code in terminal from the Workout_Builder folder:
+
+export FLASK_APP=hello.py
+flask run
