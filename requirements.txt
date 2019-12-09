@@ -3,3 +3,4 @@ numpy
 pyttsx3
 wtforms
 abc
+ajax

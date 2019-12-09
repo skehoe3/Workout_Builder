@@ -6,30 +6,31 @@
 #the github for the flask tutorial: https://github.com/szabgab/demo-flask-project
 
 from flask import Flask, render_template, request
-import round1
+from round1 import Workout
 
-app = Flask(__name__)
+app = Flask(__name__) #create the Flask app
 
-@app.route('/')
-def hello_world():
-    return render_template('index.html')
-
-@app.route('/', methods=['POST'])
-def my_form_post():
-    #text = request.form['text']
-    #processed_text = text.lower()
-    #return processed_text
-	print(request.form.get('muscleGroup'))
+@app.route('/form-example', methods=['GET', 'POST']) #allow both GET and POST requests
+def form_example():
+	print('testing1')
+	w = Workout()
+	if request.method == 'POST': #this block is only entered when the form is submitted
+		print("testing2")
+		ex = request.form.get('ex')
+		group = request.form['group']
+		return '''
+				  <h1>Workout Builder</h1>
+				  <p>Build your own workout! Choose any number of excercises you'd like, and from upper body, lower body
+				  , core, or cardio excercise types</p>
+				  <h2>Number of Excercises: {}</h2>
+                  <h2>Muscle Group:{}</h2>'''.format(ex, group)
+	print('testing3')
+	return '''<form method="POST">
+                  Number of Excercises:: <input type="text" name="ex"><br>
+                  Muscle Group: <input type="text" name="group"><br>
+                  <input type="submit" value="Submit"><br>
+              </form>'''
 
 if __name__ == '__main__':
-	#ONLY USE FOR DEV PURPOSES
-	#using otherwise essentially makes your pc easily hacked
-	#-------
-	#use ctrl + shift + r to reload the page AND clear the cache-- this
-	#is important if you want to see your chagnes rendered!!!
-	#-------
-	debug = True #when this is true, flask continually monitors the file for changes
-	FLASK_ENV=development
-	TEMPLATES_AUTO_RELOAD=True
-	app.run()
+    app.run(debug=True, port=5000) #run app in debug mode on port 5000
 
