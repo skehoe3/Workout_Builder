@@ -23,10 +23,13 @@ def form_example():
 				  <p>Build your own workout! Choose any number of excercises you'd like, and from upper body, lower body
 				  , core, or cardio excercise types</p>
 				  <h2>Number of Excercises: {}</h2>
-                  <h2>Muscle Group:{}</h2>'''.format(ex, group)
+                  <h2>Muscle Group:{}</h2>'''.format(ex, group), w.build_workout(int(ex), group)
 	print('testing3')
 	return '''<form method="POST">
-                  Number of Excercises:: <input type="text" name="ex"><br>
+				<h1>Workout Builder</h1>
+					<p>Build your own workout! Choose any number of excercises you'd like, and from upper body, lower body
+				  , core, or cardio excercise types</p>
+                  Number of Excercises: <input type="text" name="ex"><br>
                   Muscle Group: <input type="text" name="group"><br>
                   <input type="submit" value="Submit"><br>
               </form>'''
