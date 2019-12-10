@@ -10,12 +10,10 @@ from round1 import Workout
 
 app = Flask(__name__) #create the Flask app
 
-@app.route('/form-example', methods=['GET', 'POST']) #allow both GET and POST requests
+@app.route('/', methods=['GET', 'POST']) #allow both GET and POST requests
 def form_example():
-	print('testing1')
 	w = Workout()
 	if request.method == 'POST': #this block is only entered when the form is submitted
-		print("testing2")
 		ex = request.form.get('ex')
 		group = request.form['group']
 		return '''
@@ -24,7 +22,6 @@ def form_example():
 				  , core, or cardio excercise types</p>
 				  <h2>Number of Excercises: {}</h2>
                   <h2>Muscle Group:{}</h2>'''.format(ex, group), w.build_workout(int(ex), group)
-	print('testing3')
 	return '''<form method="POST">
 				<h1>Workout Builder</h1>
 					<p>Build your own workout! Choose any number of excercises you'd like, and from upper body, lower body

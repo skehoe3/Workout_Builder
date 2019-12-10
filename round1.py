@@ -17,7 +17,6 @@ class Workout():
 		chosen_excercises =[]
 		for i in range(0, num_excercises): #this loop ensures no excercise is used twice
 			index = randint(0, len(groups[musc_group])) - 1
-			print(groups[musc_group][index])
 			chosen_excercises.append(groups[musc_group][index])
 			groups[musc_group].pop(index)
 		return chosen_excercises
@@ -45,7 +44,7 @@ class Workout():
 			engine.say(w)
 			engine.runAndWait()
 			for ii in range(int(list_it[i][1])):
-				print(ii)
+				#print(ii)
 				engine = pt.init()
 				engine.say(str(ii))
 				engine.runAndWait()
@@ -60,7 +59,3 @@ class Workout():
 		times = self._assign_time(workout)
 		work_this = self._merge_times_and_components(workout, times)
 		self._play_workout(work_this)
-
-	#sample calls
-	#build_workout(1, 'upper_body')
-	#build_workout(3, 'lower_body')
