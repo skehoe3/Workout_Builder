@@ -11,21 +11,34 @@ from round1 import Workout
 app = Flask(__name__) #create the Flask app
 
 @app.route('/', methods=['GET', 'POST']) #allow both GET and POST requests
-def form_example():
+def work_form():
 	w = Workout()
 	if request.method == 'POST': #this block is only entered when the form is submitted
-		ex = request.form.get('ex')
-		group = request.form['group']
-		return '''
-				  <h1>Workout Builder</h1>
-				  <p>Build your own workout! Choose any number of excercises you'd like, and from upper body, lower body
-				  , core, or cardio excercise types</p>
-				  <h2>Number of Excercises: {}</h2>
-                  <h2>Muscle Group:{}</h2>'''.format(ex, group), w.build_workout(int(ex), group)
+		#insert checks to make sure the two fiels are filled
+		#CLEAR the warning message after a succesful submit
+
+
+		try:
+			ex = request.form.get('ex')
+			group = request.form['group']
+			return '''
+					<h1>Workout Builder</h1>
+					<p>Build your own workout! Choose any number of excercises you'd like, and from upper body, lower body, core, or cardio excercise types</p>
+					<h2>Number of Excercises: {}</h2>
+					<h2>Muscle Group:{}</h2>'''.format(ex, group), w.build_workout(int(ex), group)
+		except Exception as error:
+			print(error)
+			return '''<form method="POST">
+				<h1>Workout Builder</h1>
+					<p>Build your own workout! Choose any number of excercises you'd like, and from upper body, lower body, core, or cardio excercise types</p>
+                  Number of Excercises: <input type="text" name="ex"><br>
+                  Muscle Group: <input type="text" name="group"><br>
+                  <input type="submit" value="Submit"><br>
+				  <h1>Please input a workout</h1>
+              </form>'''
 	return '''<form method="POST">
 				<h1>Workout Builder</h1>
-					<p>Build your own workout! Choose any number of excercises you'd like, and from upper body, lower body
-				  , core, or cardio excercise types</p>
+					<p>Build your own workout! Choose any number of excercises you'd like, and from upper body, lower body, core, or cardio excercise types</p>
                   Number of Excercises: <input type="text" name="ex"><br>
                   Muscle Group: <input type="text" name="group"><br>
                   <input type="submit" value="Submit"><br>
