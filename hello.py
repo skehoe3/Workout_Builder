@@ -14,10 +14,11 @@ app = Flask(__name__) #create the Flask app
 def work_form():
 	w = Workout()
 	if request.method == 'POST': #this block is only entered when the form is submitted
-		#insert checks to make sure the two fiels are filled
+		#insert checks to make sure the two fields are filled
 		#CLEAR the warning message after a succesful submit
 
-
+		#to prevent this getting all cluttered, could import the html file and return as text.
+		#need to figure out how precisely that works
 		try:
 			ex = request.form.get('ex')
 			group = request.form['group']
