@@ -6,7 +6,7 @@
 #the github for the flask tutorial: https://github.com/szabgab/demo-flask-project
 
 from flask import Flask, render_template, request
-from src.forms.workout import Workout
+from src.workout import Workout
 
 app = Flask(__name__) #create the Flask app
 
