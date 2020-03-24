@@ -3,7 +3,7 @@ import pyttsx3 as pt
 from random import randint
 import time
 import abc
-from resources.excercies import groups
+from excercises import groups
 
 class Workout():
 	# TODO:
