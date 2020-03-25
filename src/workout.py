@@ -58,4 +58,5 @@ class Workout():
 		workout = self._build_component(number, g)
 		times = self._assign_time(workout)
 		work_this = self._merge_times_and_components(workout, times)
+		print("working out go away")
 		self._play_workout(work_this)
