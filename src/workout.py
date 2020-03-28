@@ -7,6 +7,7 @@ import abc
 from src.excercises import groups
 from ibm_watson import TextToSpeechV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
+#in credentials, save your API credentials for IBM's text to speech
 from src.credentials import creds
 from pydub import AudioSegment
 from pydub.playback import play
@@ -54,7 +55,7 @@ class Workout():
 			with open(f_name, 'wb') as audio_file:
 				#DONT SAVE IT AS A VARIABLE -- the sound file is created, and that is what we want and will play in the next step.
 				try:
-					audio_file.write(TEXT_TO_SPEECH.synthesize(str(ex), voice='en-US_AllisonVoice', accept='audio/wav').get_result().content)
+					audio_file.write(TEXT_TO_SPEECH.synthesize('Do '+ str(ex)+ ' for ' + str(count) +' seconds', voice='en-US_AllisonVoice', accept='audio/wav').get_result().content)
 				except Exception as error:
 					print("Exception retrieving voice file: {}".format(error))
 			audio_file.close()
