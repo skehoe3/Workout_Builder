@@ -4,27 +4,22 @@
     <title>Shannon</title>
 
     <link rel="stylesheet"  href="/static/style.css">
-    <script type="text/javascript" src="/static/workForm.js"></script>
   </head>
 
   <body>
     
 <h1>Automate your workout selection</h1>
-
-<!--for hooking up the python script: https://stackoverflow.com/questions/11556958/sending-data-from-html-form-to-a-python-script-in-flask/30699653 -->
-
-<!-- this is most useful: https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Your_first_HTML_form -->
-
-<!--this is the MOST MOST useful: https://stackoverflow.com/questions/12277933/send-data-from-a-textbox-into-flask -->
-
 <!--lifted the CSS from Nike's site -->
 
 
 <div class="workoutInputs">
-<form id="inputForm" method="POST" >
-	Muscle Group: <input type="text" name="muscleGroup" id="muscleGroup"> <br>
-	Number of Excercises: <input type="numeric" name="numEx" id="numEx"> <br>
-  <button id="mememe" type="button" class="press" type="submit">Submit</button>
+  <form action="" method="post" novalidate>
+  {{ form.hidden_tag() }}
+  <p>
+      {{ form.num_ex.label }}{{ form.num_ex }}<br>
+      {{ form.muscle_group.label }}{{ form.muscle_group }}<br>
+  </p>
+  <p>{{ form.submit() }}</p>
 </form>
 </div>
   </body>

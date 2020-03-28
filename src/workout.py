@@ -3,7 +3,7 @@ import pyttsx3 as pt
 from random import randint
 import time
 import abc
-from resources.excercies import groups
+from src.excercises import groups
 
 class Workout():
 	# TODO:
@@ -24,7 +24,7 @@ class Workout():
 	#assigns a time, in seconds, that each excercise should be done for.  
 	def _assign_time(self, list_of_exs):
 		times = []
-		choose_one = range(0,90,15) #times are intervals of 15 seconds between 0 and 90
+		choose_one = range(15,90,15) #times are intervals of 15 seconds between 15 and 90 -- dont want to choose 0!
 		for i in range(0,len(list_of_exs)):
 			x = randint(1, len(choose_one)) -1
 			times.append(choose_one[x])
@@ -37,10 +37,11 @@ class Workout():
 	#uses python's pyttsx3 library to play the workout for you.
 	def _play_workout(self, zipped_t_and_c):
 		list_it = list(zipped_t_and_c) #convert from a zip object to list
+		#issue is here with pyttsx3.  try implementing IBM's text to speech 
 		for i in range(len(list_it)):
 			w = 'Do ' + str(list_it[i][0]) + ' for ' + str(list_it[i][1]) + ' seconds'
 			countdown = [str(i) for i in range(0, list_it[i][1], -1)]
-			engine = pt.init()
+			engine = pt.init(driverName="nsss")
 			engine.say(w)
 			engine.runAndWait()
 			for ii in range(int(list_it[i][1])):
@@ -53,9 +54,10 @@ class Workout():
 
 	#Master function that calls all of the others and assembles a routine.  
 	#Call this function for each muscle group you want to include.
-	def build_workout(self, number, g = ['upper_body', 'lower_body', 'core', 'cardio']):
+	def build_workout(self, number, g):
 		g = self._sanitize_inputs(g)
 		workout = self._build_component(number, g)
 		times = self._assign_time(workout)
 		work_this = self._merge_times_and_components(workout, times)
+		print("working out go away")
 		self._play_workout(work_this)
