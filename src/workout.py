@@ -1,6 +1,7 @@
 import numpy as np
 #import pyttsx3 as pt
 from random import randint
+import os
 import time
 import abc
 from excercises import groups
@@ -44,40 +45,30 @@ class Workout():
 	def _merge_times_and_components(self, list_of_exs, num_excercises):
 		return zip(list_of_exs, num_excercises)
 
-	#uses python's pyttsx3 library to play the workout for you.
-	# def _play_workout(self, zipped_t_and_c):
-	# 	list_it = list(zipped_t_and_c) #convert from a zip object to list
-	# 	#issue is here with pyttsx3.  try implementing IBM's text to speech 
-	# 	for i in range(len(list_it)):
-	# 		w = 'Do ' + str(list_it[i][0]) + ' for ' + str(list_it[i][1]) + ' seconds'
-	# 		countdown = [str(i) for i in range(0, list_it[i][1], -1)]
-	# 		engine = pt.init(driverName="nsss")
-	# 		engine.say(w)
-	# 		engine.runAndWait()
-	# 		for ii in range(int(list_it[i][1])):
-	# 			#print(ii)
-	# 			engine = pt.init()
-	# 			engine.say(str(ii))
-	# 			#engine.runAndWait()
-	# 			time.sleep(.20)
 
 	def _get_sound_files(self, zipped_t_and_c):
 		sound_files =[]
 		for ex, count in list(zipped_t_and_c):
-			with open('audio/' + str(ex)+ '_' + str(count) + '.wav', 'wb') as audio_file:
+			f_name = ('audio/'+ str(ex)+ '_' + str(count) + '.wav').replace(' ','_')
+			sound_files.append((f_name, count))
+			with open(f_name, 'wb') as audio_file:
 				#DONT SAVE IT AS A VARIABLE -- the sound file is created, and that is what we want and will play in the next step.
 				try:
 					audio_file.write(TEXT_TO_SPEECH.synthesize(str(ex), voice='en-US_AllisonVoice', accept='audio/wav').get_result().content)
 				except Exception as error:
 					print("Exception retrieving voice file: {}".format(error))
-					
-	def _play_workout(self, workout, times):
-		#get the path
-		#get list of tiles in the audio folder
-		#loop through and play each file
+		return sound_files
 
-		#delete the files in the audio folder
-		pass
+	#def _play_workout(self):				
+	def _play_workout(self, workout, times, sound_files):
+
+		#just parse the string -- its in there.  way easier.
+		for i in range(0, len(sound_files)):
+			f_path = os.path.abspath(sound_files[i][0])
+			print(f_path)
+			playsound(f_path)
+			print("played the wav file... supposedly")
+			time.sleep(sound_files[i][1])
 
 	#Master function that calls all of the others and assembles a routine.  
 	#Call this function for each muscle group you want to include.
@@ -88,8 +79,8 @@ class Workout():
 		record_this = self._merge_times_and_components(workout, times)
 		print("working out go away")
 		#self._play_workout(work_this)
-		self._get_sound_files(record_this)
-		self._play_workout(workout, times) #we have dumped the ap
+		sound_files = self._get_sound_files(record_this)
+		self._play_workout(workout, times, sound_files) #we have dumped the ap
 
 
 Workout().build_workout(3, 'upper_body')

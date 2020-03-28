@@ -4,3 +4,4 @@ pyttsx3
 wtforms
 ajax
 flask-wtf
+playsound
