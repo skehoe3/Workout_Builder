@@ -1,7 +1,6 @@
-flask
+Flask
 numpy
 pyttsx3
 wtforms
-abc
 ajax
 flask-wtf
