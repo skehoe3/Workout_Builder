@@ -68,8 +68,6 @@ class Workout():
 		#just parse the string -- its in there.  way easier.
 		for i in range(0, len(sound_files)):
 			f_path = os.path.abspath(sound_files[i][0])
-			print(f_path)
-			print(sound_files[i][1])
 			sound = AudioSegment.from_wav(f_path)
 			play(sound)
 			print("sleeping for " + str(sound_files[i][1]) + " seconds")
@@ -83,13 +81,13 @@ class Workout():
 		times = self._assign_time(workout)
 		record_this = self._merge_times_and_components(workout, times)
 		print("working out go away")
-		#self._play_workout(work_this)
 		sound_files = self._get_sound_files(record_this)
 		self._play_workout(workout, times, sound_files) #we have dumped the ap
-
-		#move this to the beginning-- then no risk of deleting files we need still
-		os.getcwd()
-		os.remove("/audio")
+		#remove files now that we are done with them
+		for f in os.listdir("audio/"):
+			if '.DS_Store' in "audio/" + str(f):
+				pass
+			os.remove(str("audio/"+f))
 
 
 #Workout().build_workout(2, 'upper_body')
