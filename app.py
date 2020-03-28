@@ -20,10 +20,10 @@ def index():
 	w = WorkoutForm()
 	# if form.validate_on_submit():
 	# 	w.build_workout() # TODO: fill this in...
-	if request.method == "POST":
+	if request.method == "GET":
 		return render_template("index.html", form=w)
 	if w.validate_on_submit():
-		Workout(w.num_ex, w.muscle_group)
+		Workout().build_workout(w.num_ex.data, w.muscle_group.data)
 		return render_template("index.html", form=w)
 	return "Not implemented"
 

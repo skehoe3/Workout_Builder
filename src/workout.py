@@ -53,7 +53,7 @@ class Workout():
 
 	#Master function that calls all of the others and assembles a routine.  
 	#Call this function for each muscle group you want to include.
-	def build_workout(self, number, g = ['upper_body', 'lower_body', 'core', 'cardio']):
+	def build_workout(self, number, g):
 		g = self._sanitize_inputs(g)
 		workout = self._build_component(number, g)
 		times = self._assign_time(workout)
