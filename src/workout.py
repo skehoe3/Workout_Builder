@@ -37,7 +37,7 @@ class Workout():
 	#uses python's pyttsx3 library to play the workout for you.
 	def _play_workout(self, zipped_t_and_c):
 		list_it = list(zipped_t_and_c) #convert from a zip object to list
-		#issue is here with pyttsx3.  https://github.com/nateshmbhat/pyttsx3/issues/8
+		#issue is here with pyttsx3.  try implementing IBM's text to speech 
 		for i in range(len(list_it)):
 			w = 'Do ' + str(list_it[i][0]) + ' for ' + str(list_it[i][1]) + ' seconds'
 			countdown = [str(i) for i in range(0, list_it[i][1], -1)]
