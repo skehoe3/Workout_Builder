@@ -11,13 +11,13 @@ from src.workout import Workout
 #     authenticator=authenticator
 # )
 
-# text_to_speech.set_service_url('{}'.format(creds['url']))
-# #text_to_speech.set_disable_ssl_verification(True)
-# with open('hello_world.wav', 'wb') as audio_file:
-#     audio_file.write(
-#         text_to_speech.synthesize(
-#             'Hello world',
-#             voice='en-US_AllisonVoice',
-#             accept='audio/wav'        
-#         ).get_result().content)
+text_to_speech.set_service_url('{}'.format(creds['url']))
+#text_to_speech.set_disable_ssl_verification(True)
+with open('hello_world.wav', 'wb') as audio_file:
+    audio_file.write(
+        text_to_speech.synthesize(
+            'Hello world',
+            voice='en-US_AllisonVoice',
+            accept='audio/wav'        
+        ).get_result().content)
 

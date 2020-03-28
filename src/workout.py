@@ -1,5 +1,5 @@
 import numpy as np
-import pyttsx3 as pt
+#import pyttsx3 as pt
 from random import randint
 import time
 import abc
@@ -7,12 +7,13 @@ from excercises import groups
 from ibm_watson import TextToSpeechV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 from credentials import creds
-
+from playsound import playsound
 
 AUTHENTICATOR = IAMAuthenticator('{}'.format(creds['apikey']))
 TEXT_TO_SPEECH = TextToSpeechV1(
     authenticator=AUTHENTICATOR
 )
+TEXT_TO_SPEECH.set_service_url('{}'.format(creds['url']))
 
 class Workout():
 	# TODO:
@@ -69,7 +70,13 @@ class Workout():
 					audio_file.write(TEXT_TO_SPEECH.synthesize(str(ex), voice='en-US_AllisonVoice', accept='audio/wav').get_result().content)
 				except Exception as error:
 					print("Exception retrieving voice file: {}".format(error))
-	def _play_workout(self,zipped_t_and_c):
+					
+	def _play_workout(self, workout, times):
+		#get the path
+		#get list of tiles in the audio folder
+		#loop through and play each file
+
+		#delete the files in the audio folder
 		pass
 
 	#Master function that calls all of the others and assembles a routine.  
@@ -82,6 +89,7 @@ class Workout():
 		print("working out go away")
 		#self._play_workout(work_this)
 		self._get_sound_files(record_this)
+		self._play_workout(workout, times) #we have dumped the ap
 
 
 Workout().build_workout(3, 'upper_body')
