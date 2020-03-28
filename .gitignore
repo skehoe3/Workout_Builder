@@ -3,3 +3,6 @@
 /.vscode
 /__pycache__
 *__pycache__
+*credentials.py
+*test*
+*.wav
