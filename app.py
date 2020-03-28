@@ -13,7 +13,7 @@ def index():
 	w = WorkoutForm()
 	if request.method == "GET":
 		return render_template("index.html", form=w)
-	if request.method == "POST": # the request method here is POST
+	if request.method == "POST":
 		Workout().build_workout(w.num_ex.data, w.muscle_group.data)
 
 		return render_template("index.html", form=w)

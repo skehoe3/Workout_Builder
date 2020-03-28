@@ -20,9 +20,6 @@ TEXT_TO_SPEECH = TextToSpeechV1(
 TEXT_TO_SPEECH.set_service_url('{}'.format(creds['url']))
 
 class Workout():
-	# TODO:
-	#randomly selects the number of excercises specified from the muscle group desired.
-	#reformat user input to match the options in the app
 	def _sanitize_inputs(self, musc_group):
 		return musc_group.strip().replace(' ', '_')
 
@@ -62,8 +59,7 @@ class Workout():
 					print("Exception retrieving voice file: {}".format(error))
 			audio_file.close()
 		return sound_files
-
-	#def _play_workout(self):				
+			
 	def _play_workout(self, workout, times, sound_files):
 		#just parse the string -- its in there.  way easier.
 		for i in range(0, len(sound_files)):
@@ -88,6 +84,3 @@ class Workout():
 			if '.DS_Store' in "audio/" + str(f):
 				pass
 			os.remove(str("audio/"+f))
-
-
-#Workout().build_workout(2, 'upper_body')
