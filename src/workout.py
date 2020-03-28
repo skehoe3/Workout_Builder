@@ -4,11 +4,14 @@ from random import randint
 import os
 import time
 import abc
-from excercises import groups
+from src.excercises import groups
 from ibm_watson import TextToSpeechV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
-from credentials import creds
-from playsound import playsound
+from src.credentials import creds
+from pydub import AudioSegment
+from pydub.playback import play
+import wave
+
 
 AUTHENTICATOR = IAMAuthenticator('{}'.format(creds['apikey']))
 TEXT_TO_SPEECH = TextToSpeechV1(
@@ -57,17 +60,19 @@ class Workout():
 					audio_file.write(TEXT_TO_SPEECH.synthesize(str(ex), voice='en-US_AllisonVoice', accept='audio/wav').get_result().content)
 				except Exception as error:
 					print("Exception retrieving voice file: {}".format(error))
+			audio_file.close()
 		return sound_files
 
 	#def _play_workout(self):				
 	def _play_workout(self, workout, times, sound_files):
-
 		#just parse the string -- its in there.  way easier.
 		for i in range(0, len(sound_files)):
 			f_path = os.path.abspath(sound_files[i][0])
 			print(f_path)
-			playsound(f_path)
-			print("played the wav file... supposedly")
+			print(sound_files[i][1])
+			sound = AudioSegment.from_wav(f_path)
+			play(sound)
+			print("sleeping for " + str(sound_files[i][1]) + " seconds")
 			time.sleep(sound_files[i][1])
 
 	#Master function that calls all of the others and assembles a routine.  
@@ -82,5 +87,9 @@ class Workout():
 		sound_files = self._get_sound_files(record_this)
 		self._play_workout(workout, times, sound_files) #we have dumped the ap
 
+		#move this to the beginning-- then no risk of deleting files we need still
+		os.getcwd()
+		os.remove("/audio")
 
-Workout().build_workout(3, 'upper_body')
+
+#Workout().build_workout(2, 'upper_body')

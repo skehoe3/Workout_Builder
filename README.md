@@ -27,3 +27,5 @@ Execute the following code in terminal from the Workout_Builder folder:
 
 export FLASK_APP=hello.py
 flask run
+
+if running on MacOS, be sure to install ffmpeg via brew install ffmpeg
