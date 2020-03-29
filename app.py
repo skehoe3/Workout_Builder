@@ -15,7 +15,6 @@ def index():
 		return render_template("index.html", form=w)
 	if request.method == "POST":
 		Workout().build_workout(w.num_ex.data, w.muscle_group.data)
-
 		return render_template("index.html", form=w)
 	return "Not implemented"
 
