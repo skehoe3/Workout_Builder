@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Shannon</title>
 
-    <link rel="stylesheet"  href="/static/style.css">
-  </head>
+<head>
+  <title>Homepage</title>
 
-  <body>
-    
-<h1>Automate your workout selection</h1>
-<!--lifted the CSS from Nike's site -->
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+  <h1>Automate your workout selection</h1>
+  <!--lifted the CSS from Nike's site -->
 
 
-<div class="workoutInputs">
-  <form action="" method="post" novalidate>
-  {{ form.hidden_tag() }}
-  <p>
-      {{ form.num_ex.label }}{{ form.num_ex }}<br>
-      {{ form.muscle_group.label }}{{ form.muscle_group }}<br>
-  </p>
-  <p>{{ form.submit() }}</p>
-</form>
-</div>
-  </body>
+  <div class="workoutInputs">
+    <form action="" method="post" novalidate>
+      {{ form.hidden_tag() }}
+      <p>
+        {{ form.num_ex.label }}{{ form.num_ex }}<br>
+        {{ form.muscle_group.label }}{{ form.muscle_group }}<br>
+      </p>
+      <p>{{ form.submit() }}</p>
+    </form>
+  </div>
+</body>
+
 </html>
