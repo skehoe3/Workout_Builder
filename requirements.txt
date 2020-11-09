@@ -5,3 +5,4 @@ wtforms
 ajax
 flask-wtf
 pydub
+ibm_watson
